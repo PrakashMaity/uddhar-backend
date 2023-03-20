@@ -2,7 +2,7 @@
   "name": "uddhar-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "server.ts",
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.js",
