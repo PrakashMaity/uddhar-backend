@@ -1,6 +1,8 @@
 import { Routes } from "./interface/routes.interface";
 import express from "express";
 import dotenv from "dotenv";
+import { connect, ConnectOptions } from "mongoose";
+import { configData, dataBaseOption } from "./config/config";
 
 dotenv.config();
 
@@ -11,8 +13,16 @@ class App {
   constructor(routes: Routes[]) {
     this.app = express();
     this.port = 8080;
+    this.connectToDatabase()
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
+  }
+
+  private connectToDatabase() {
+    connect(configData.MONGODB,{
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }as ConnectOptions);
   }
 
   private initializeMiddlewares() {

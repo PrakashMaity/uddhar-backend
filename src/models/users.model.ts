@@ -11,6 +11,22 @@ const userSchema: Schema = new Schema({
     type: String,
     required: true,
   },
+  name:{
+    type: String,
+    required: false,
+  },
+  image:{
+    type: String,
+    required: false,
+  },
+  profileType:{
+    type: String,
+    required: false,
+  },
+  phoneNumber:{
+    type: String,
+    required: false,
+  }
 });
 
 const userModel = model<User & Document>("User", userSchema);
