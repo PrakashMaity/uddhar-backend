@@ -11,7 +11,13 @@ class App {
   constructor(routes: Routes[]) {
     this.app = express();
     this.port = 8080;
+    this.initializeMiddlewares();
     this.initializeRoutes(routes);
+  }
+
+  private initializeMiddlewares() {
+    this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(express.json());
   }
 
   public listen() {

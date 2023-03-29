@@ -1,7 +1,6 @@
-
-import { hash, compare } from 'bcrypt';
-import { sign } from 'jsonwebtoken';
-
+import { hash, compare } from "bcrypt";
+import { sign } from "jsonwebtoken";
+import { CreateUserDto } from "../dtos/users.dto";
 
 class AuthService {
   // public users = userModel;
@@ -17,8 +16,6 @@ class AuthService {
 
     return userData;
   }
-
-  
 }
 
 export default AuthService;
