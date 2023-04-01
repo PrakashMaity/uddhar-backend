@@ -6,4 +6,15 @@ export interface User {
   image?:string;
   profileType?:string;
   phoneNumber?:string;
+  subscription?:{
+    subscriptionType?:string,
+    isSubscribe?:boolean,
+    startDate?:Date,
+    endDate?:Date
+  },
+  settings?:{
+    Currency?: string;
+    Language?: string;
+    Theme?: string;
+  }
 }
